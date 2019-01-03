@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?><Response>
+<DataMart asOfDriver="ASOF" chainedData="N" classification="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2018-06-21T20:42:10.480" createdBy="p633181" dataLoadType="FACT" dbView="Y" dbViewCustomFlag="N" dbviewJoinedAsTransient="N" description="" encryptionIndicator="N" entitledFlag="N" eventName="" eventStatus="" eventTypeId="" eventTypeName="" hierarchicalFlag="N" ignoreDataEntitlement="N" intent="Intermediate" javaClassName="" lastUpdatedAt="2018-11-22T22:23:26.916" lastUpdatedBy="e602587" martType="SPOT" martUsage="Persistent" name="DM_FUND_PERFORMANCE_STEP5" ownerRole="Fund Admin" pluginType="" preAggregatedDataFlag="N" referenceDataIndicator="N" refreshMode="Auto" retention="" rollupFunction="" schBusinessDays="" schFrequency="" schHours="" schSelectedDate="" status="INACTIVE" supportAsatRangeFlag="N" tags="" transactionalFlag="N" version="6">
+<Parameters>
+<Parameter IsFilter="N" local="N" name="P_MAX_ASOF">
+<DefaultValue/>
+</Parameter>
+<Parameter IsFilter="N" local="N" name="ENTITY_TYPE">
+<DefaultValue><![CDATA[FUND]]></DefaultValue>
+</Parameter>
+<Parameter IsFilter="N" local="N" name="SERVICE_PROVIDED">
+<DefaultValue><![CDATA[3]]></DefaultValue>
+</Parameter>
+</Parameters>
+<Sources>
+<Source isDefault="N" name="MANUAL"/>
+</Sources>
+<FilterCondition definitionMethod="freeform">
+<FilterExpression><![CDATA[RANK = 1 AND ASOF=FN_DATEADD(PARAMETER.P_MAX_ASOF,0, 'MONTH')]]></FilterExpression>
+<FilterElements/>
+</FilterCondition>
+<Indexes/>
+<Hints>
+<Hint name="USE_NEW_FHASH" value="true"/>
+<Hint name="DBJoinMart" value="true"/>
+<Hint name="USE_OLD_CONTEXT" value="false"/>
+</Hints>
+<Table alias="DM_FUND_PERFORMANCE_SQL_STEP1" name="DM_FUND_PERFORMANCE_SQL_STEP1" order="0" sourceType="DataMart"/>
+<Elements>
+<Element aggregateFlag="N" alias="ASAT" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-08-13T11:30:11.000" createdBy="Data Analyst" dataType="DateTime" displayName="ASAT" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2011-11-22T10:38:25.647" lastUpdatedBy="p507233" length="" name="ASAT" ownerRole="Shared Entities" physicalColumnName="AS_AT" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element aggregateFlag="N" alias="ASOF" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-08-13T11:30:11.000" createdBy="Data Analyst" dataType="Date" displayName="ASOF" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2011-11-22T10:38:31.394" lastUpdatedBy="p507233" length="" name="ASOF" ownerRole="Shared Entities" physicalColumnName="AS_OF" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element aggregateFlag="N" alias="SOURCE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-08-13T11:30:15.000" createdBy="Data Analyst" dataType="String" displayName="Source" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2013-04-23T01:53:11.497" lastUpdatedBy="p542514" length="200" name="SOURCE" ownerRole="Shared Entities" physicalColumnName="SOURCE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="GENERATEDID" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-07-09T13:40:25.000" createdBy="Data Analyst" dataType="Integer" displayName="" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2011-11-22T10:39:12.562" lastUpdatedBy="p507233" length="" name="GENERATEDID" ownerRole="Shared Entities" physicalColumnName="GENERATED_ID" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element aggregateFlag="N" alias="ROWTYPE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-08-13T11:30:15.000" createdBy="Data Analyst" dataType="Integer" displayName="ROWTYPE" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2011-11-22T10:39:01.394" lastUpdatedBy="p507233" length="" name="ROWTYPE" ownerRole="Shared Entities" physicalColumnName="ROW_TYPE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element aggregateFlag="N" alias="INTERNALASAT" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2010-08-13T11:30:13.000" createdBy="Data Analyst" dataType="DateTime" displayName="INTERNALASAT" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2011-11-22T10:38:49.727" lastUpdatedBy="p507233" length="" name="INTERNALASAT" ownerRole="Shared Entities" physicalColumnName="INTERNAL_AS_AT" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="" sourceAlias="" sourceType="System" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="CLASS_ID" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2016-02-01T14:46:01.435" createdBy="p585583" dataType="String" displayName="CLASS_ID" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="Y" lastUpdatedAt="2016-02-01T14:46:01.435" lastUpdatedBy="p585583" length="10" name="CLASS_ID" ownerRole="Shared Entities" physicalColumnName="CLASS_ID" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="FUND_ID" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2012-04-11T10:05:31.324" createdBy="p459807" dataType="String" displayName="Fund ID" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="Y" entitlementDriver="Y" key="Y" lastUpdatedAt="2016-09-30T14:14:19.993" lastUpdatedBy="p588263" length="50" lookupCategory="DM_FUND_REFERENCE" lookupElement="FUND_NAME" name="FUND_ID" ownerRole="Shared Entities" physicalColumnName="FUND_ID" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="2">
+<ElementLookups>
+<Lookup isDefault="Y" lookUpElementName="FUND_ID" lookupDescElement="FUND_NAME" lookupEntityName="DM_FUND_REFERENCE" lookupEntityType="DataMart" lookupName="Fund"><![CDATA[FUND_TYPE = 'RELEASE']]></Lookup>
+<Lookup isDefault="N" lookUpElementName="FUND_ID" lookupDescElement="FUND_NAME" lookupEntityName="DM_FUND_REF" lookupEntityType="DataMart" lookupName="DM_FUND_REF"/>
+</ElementLookups>
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="CLASS_NAME" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2016-02-01T14:50:57.104" createdBy="p585583" dataType="String" displayName="Class Description" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-04-15T17:17:19.837" lastUpdatedBy="p587591" length="250" name="CLASS_NAME" ownerRole="Shared Entities" physicalColumnName="CLASS_NAME" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="4">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="DESCRIPTION" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2015-12-03T12:04:49.931" createdBy="p593978" dataType="String" displayName="DESCRIPTION" docUrl="" documentVersion="" eleGovStatus="New" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-10-26T14:46:13.800" lastUpdatedBy="p587591" length="4000" name="DESCRIPTION" ownerRole="Shared Entities" physicalColumnName="DESCRIPTION" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="END_DATE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2015-01-08T18:17:25.880" createdBy="p578158" dataType="Date" displayName="END_DATE" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2015-01-08T18:17:25.880" lastUpdatedBy="p578158" length="" name="END_DATE" ownerRole="Shared Entities" physicalColumnName="END_DATE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="FUND_SOURCE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2016-02-23T16:27:59.598" createdBy="p569371" dataType="String" displayName="Fund Source" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-03-08T17:20:13.893" lastUpdatedBy="p569371" length="20" name="FUND_SOURCE" ownerRole="Shared Entities" physicalColumnName="FUND_SOURCE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="2">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="ONE_MONTH" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2016-04-01T14:02:23.396" createdBy="p587591" dataType="HighPrecisionDouble" displayName="ONE_MONTH" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-04-01T14:02:23.396" lastUpdatedBy="p587591" length="" name="ONE_MONTH" ownerRole="Shared Entities" physicalColumnName="ONE_MONTH" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="ONE_MONTH_OVR" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2016-12-02T14:49:30.224" createdBy="p587591" dataType="HighPrecisionDouble" displayName="One Month Overrride" docUrl="" documentVersion="" eleGovStatus="New" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-12-02T14:49:30.224" lastUpdatedBy="p587591" length="" name="ONE_MONTH_OVR" ownerRole="Shared Entities" physicalColumnName="ONE_MONTH_OVR" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="FN_SUM" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="PRIOR_ONE_MONTH" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2017-08-29T16:36:29.600" createdBy="p585583" dataType="VeryHighPrecisionDouble" displayName="PRIOR_ONE_MONTH" docUrl="" documentVersion="" eleGovStatus="New" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2017-08-29T16:36:29.600" lastUpdatedBy="p585583" length="" name="PRIOR_ONE_MONTH" ownerRole="Shared Entities" physicalColumnName="PRIOR_ONE_MONTH" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="FN_SUM" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="PRIOR_TWO_MONTH" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2017-08-29T16:36:53.760" createdBy="p585583" dataType="VeryHighPrecisionDouble" displayName="PRIOR_TWO_MONTH" docUrl="" documentVersion="" eleGovStatus="New" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2017-08-29T16:36:53.760" lastUpdatedBy="p585583" length="" name="PRIOR_TWO_MONTH" ownerRole="Shared Entities" physicalColumnName="PRIOR_TWO_MONTH" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="FN_SUM" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="RANK" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2016-05-03T08:03:25.333" createdBy="p606495" dataType="Integer" displayName="RANK" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="Y" lastUpdatedAt="2016-05-03T08:03:25.333" lastUpdatedBy="p606495" length="" name="RANK" ownerRole="Shared Entities" physicalColumnName="RANK" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="1">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="SEC_CLASS_ID" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2016-02-02T10:28:59.677" createdBy="p585583" dataType="String" displayName="SEC Class ID" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2016-04-15T17:17:57.502" lastUpdatedBy="p587591" length="10" name="SEC_CLASS_ID" ownerRole="Shared Entities" physicalColumnName="SEC_CLASS_ID" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="2">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="START_DATE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="2015-05-05T03:47:58.457" createdBy="e458421" dataType="Date" displayName="Start Date" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2015-05-05T03:47:58.457" lastUpdatedBy="e458421" length="" name="START_DATE" ownerRole="Shared Entities" physicalColumnName="START_DATE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="PREV_PERIOD_REPORT_DATE" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="" createdBy="" dataType="Date" encryptionIndicator="N" entitledFlag="N" formulaDefinitonMethod="freeForm" key="N" lastUpdatedAt="" lastUpdatedBy="" name="PREV_PERIOD_REPORT_DATE" ownerRole="" physicalColumnName="PREV_PERIOD_REPORT_DATE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" rollupFunction="" source="" sourceAlias="" sourceType="Formula" status="ACTIVE" trackSource="N" version="0">
+<Formula><![CDATA[FN_DATEADD(ASOF,-1,'MONTH')  ]]></Formula>
+<Description local="Y">PREV_PERIOD_REPORT_DATE</Description>
+</Element>
+<Element alias="REPORT_DATE" caseOption="" convertUsingFxRate="N" coreEntityIndicator="Y" createdAt="2014-06-02T23:28:43.810" createdBy="e458421" dataType="Date" displayName="Report Date" docUrl="" documentVersion="" eleGovStatus="" encryptionIndicator="N" entitledFlag="N" entitlementDriver="N" key="N" lastUpdatedAt="2014-06-02T23:28:43.810" lastUpdatedBy="e458421" length="" name="REPORT_DATE" ownerRole="Shared Entities" physicalColumnName="REPORT_DATE" physicalTableName="DM_FUND_PERFORMANCE_STEP5" reportDefaultFormat="" rollupFunction="" source="DM_FUND_PERFORMANCE_SQL_STEP1" sourceAlias="DM_FUND_PERFORMANCE_SQL_STEP1" sourceType="DataMart" sscDataClassification="" sscDataClassificationCode="" status="ACTIVE" supportI18N="N" synonym="" trackSource="N" valueRange="" version="0">
+<ValidationRule type="None"/>
+<Description local="N"/>
+</Element>
+<Element alias="SEC_CLASS_NAME" convertUsingFxRate="N" coreEntityIndicator="N" createdAt="" createdBy="" dataType="String" encryptionIndicator="N" entitledFlag="N" formulaDefinitonMethod="freeForm" key="N" lastUpdatedAt="" lastUpdatedBy="" name="SEC_CLASS_NAME" ownerRole="" physicalColumnName="SEC_CLASS_NAME" physicalTableName="DM_FUND_PERFORMANCE_STEP5" rollupFunction="" source="" sourceAlias="" sourceType="Formula" status="ACTIVE" trackSource="N" version="0">
+<Formula><![CDATA[CLASS_NAME]]></Formula>
+<Description local="Y">the value the same as CLASS_NAME,  call it CLASS_NAME2</Description>
+</Element>
+</Elements>
+<Keys/>
+</DataMart>
+</Response>
